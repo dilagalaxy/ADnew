@@ -1,3 +1,184 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// NAVBAR
+
+body,html{
+  height: 100%;
+  margin: 0;
+}
+
+.navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+.navbar-nav {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+.btn-group {
+  margin-left: 15px;
+}
+.btn-user {
+  background-color: #222222;
+}
+.btn-user a {
+  text-decoration: none;
+  color: #F0B61A;
+}
+.btn-user a:hover {
+  background-color: #222222;
+  color: #FFF;
+}
+.caret {
+  color: #F0B61A;
+}
+
+/*footer*/
+.page-wrap {
+  min-height: 100%;
+  padding-left: 140px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.push {
+  height: 40px;
+}
+.page-wrap:after {
+  height: 80px;
+  bottom: 0;
+}
+
+#footer {
+  background: #F0B61A;
+  height: 90px;
+  padding: 30px 20px 30px 160px;
+}
+.twitter-follow-button {
+  float: left;
+  margin: 5px 5px;
+  display: inline-block;
+}
+.copyright {
+  float: right;
+  margin: 5px 5px;
+}
+.copyright p {
+  font-size: 1em;
+}
+
+// LANDING PAGE
+.index-background {
+  background-color: #4BB4F5;
+  top: 0;
+}
+.center-container {
+  margin: auto;
+  float: none;
+}
+// TYPOGRAPHY
+h1 {
+  color: #625F5F;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+h2 {
+  color: #625F5F;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+h3 {
+  color: #625F5F;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+}
+p {
+  color: #625F5F;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1em;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+a:hover {
+  background: none;
+  text-decoration: none;
+}
+
+.alert {
+  text-align: center;
+  font-size: 1.2em;
+}
+.row {
+  margin: 0;
+}
+
+/*Small devices (smartphones, 300px and up) */
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .slogan {
+    font-size: 1em;
+  }
+  .title {
+    font-size: 4em;
+  }
+  .registration_link {
+    font-size: 1.7em;
+  }
+}
+
+/*Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .slogan {
+    font-size: 1.3em;
+  }
+  .title {
+    font-size: 5em;
+  }
+}
+
+/* tablets/desktops */
+
+@media (min-width: 992px) {
+  .slogan {
+    font-size: 3em;
+  }
+  .title {
+    font-size: 8em;
+  }
+}
