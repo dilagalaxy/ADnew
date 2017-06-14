@@ -1,5 +1,5 @@
 <div class="row">
-  <div>
+  <div class="message-wrap">
     <%= message.user.user_name %>:  <%= message.body %>
     <% if current_user && current_user.admin? %>
       <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, room_message_path(message.room, message), method: :delete, data: { confirm: 'Are you sure?' } %>
