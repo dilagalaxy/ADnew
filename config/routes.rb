@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+ mount ActionCable.server => '/cable'
+ 
   resources :rooms do
    resources :messages
   end

@@ -5,6 +5,6 @@ test:
   adapter: async
 
 registrationion:
-  adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: CHAT_production
+  adapter: postgresql
+  url: postgres://dsbkqlshbcfizs:29a12d12db88502fe88135abcb4d57513859cbabe8733ae3f87d6cc18b509e04@ec2-23-21-220-152.compute-1.amazonaws.com:5432/dbeqbttauo65ir
+  
