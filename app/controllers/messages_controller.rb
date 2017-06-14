@@ -29,7 +29,6 @@ class MessagesController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @message.save
-        RoomChannel.broadcast_to @room.id, message: @message
         format.html { redirect_to @room }
         format.json { render :show, status: :created, location: @message }
       else
