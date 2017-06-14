@@ -1,3 +1,26 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-wrap {
+  display: inline;
+  background-color: #F1F0F0;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 1.1em;
+}
+.message-divider {
+  height: 5px;
+}
+.send-message{
+  margin-top: 28px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: #FFC300;
+}
+.message-area {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-left: 0;
+}

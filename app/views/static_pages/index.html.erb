@@ -2,19 +2,25 @@
   <div class="row">
     <div class="col-xs-10 col-sm-6 col-md-8 center-container">
       <header>
-        <h1 class="title"> AD </h1>
-        <h3 class="slogan"> Talk to people from every part of the world </h3>
+        <h1 class="title"> WIM </h1>
+        <h3 class="slogan"> We help you connect with people with your same interests </h3>
       </header>
     </div>
   </div>
+  <% if user_signed_in? %>
   <div class="row">
-    <div class="col-sm-2 col-md-4"></div>
-      <div class="col-xs-6 col-sm-4 col-md-2">
-        <h2 class="registration_link"><%= link_to('Login', new_user_session_path) %></h2>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-2">
-        <h2 class="registration_link"><%= link_to('Sign Up', new_user_registration_path) %></h2>
-      </div>
-      <div class="col-sm-2 col-md-4"></div>
+    <div><h2><%= link_to 'Chat Rooms', rooms_path %></h2></div>
   </div>
+  <% else %>
+    <div class="row">
+      <div class="col-sm-2 col-md-4"></div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h2 class="registration_link"><%= link_to('Login', new_user_session_path) %></h2>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h2 class="registration_link"><%= link_to('Sign Up', new_user_registration_path) %></h2>
+        </div>
+        <div class="col-sm-2 col-md-4"></div>
+    </div>
+  <% end %>
 </body>

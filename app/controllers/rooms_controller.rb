@@ -1,6 +1,7 @@
+
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   # GET /rooms
   # GET /rooms.json
   def index
@@ -10,6 +11,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @messages = @room.messages
   end
 
   # GET /rooms/new
@@ -69,6 +71,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.fetch(:room).permit(:user_id, :room_name)
+      params.require(:room).permit(:user_id, :room_name)
     end
 end

@@ -1,3 +1,164 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// INDEX PAGE
+.room-index {
+  background-image: image-url("blur.png");
+}
+.display-room {
+  max-width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5px;
+  background-image: image-url("marble.png");
+  border-radius: 7px;
+  border: 1px solid #E27575;
+}
+.room-description {
+  padding: 15px;
+}
+.room-name {
+  color: #FFF;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform:uppercase;
+}
+.room-img {
+  display: block;
+  margin: auto;
+  position: relative;
+  max-height: 300px;
+}
+.display-room .room-links a {
+  color: #FFF;
+  background-color: #E27575;
+  box-shadow: 1px 1px 5px #B6B6B6;
+  border-radius: 3px;
+  text-shadow: 1px 1px 1px #9E3F3F;
+  cursor: pointer;
+  margin: 3px;
+}
+.display-room .room-links a:hover {
+  text-shadow: 1px 1px 1px #625F5F;
+}
+.create-room {
+  padding-top: 40px;
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.1em;
+  float: right;
+}
+.create-room a {
+  padding: 5px;
+}
+.create-room a:hover {
+  color: #111;
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #FFF;
+  transition: color, background-color 600ms;
+  -webkit-transition: color, background-color 600ms;
+}
+@media (min-width: 992px) {
+  .row > .col-md-3:nth-child(4n+1) {
+    clear: left;
+  }
+}
+
+// room FORM
+#room-form {
+  text-align: center;
+  width: 100%;
+  color: #888;
+}
+#room-form form {
+  background: #E5E5E5;
+  display: inline-block;
+  margin: auto;
+  padding: 30px;
+  border-radius: 5px;
+}
+.form-button input {
+  background: #E27575;
+  border: none;
+  padding: 10px 25px 10px 25px;
+  color: #FFF;
+  box-shadow: 1px 1px 5px #B6B6B6;
+  border-radius: 3px;
+  text-shadow: 1px 1px 1px #9E3F3F;
+  cursor: pointer;
+}
+.form-button input:hover {
+  background: #CF7A7A
+}
+.form-text-field {
+  border: 1px solid #DADADA;
+  color: #888;
+  height: 30px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  width: 100%;
+  font-size: 12px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.form-textarea {
+  border: 1px solid #DADADA;
+  color: #888;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  width: 100%;
+  min-width: 250px;
+  line-height:25px;
+  font-size: 12px;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.room-links {
+  text-align: center;
+  margin: 5px;
+}
+.room-links a {
+  font-size: 1.1em;
+  padding: 5px;
+}
+.room-links a:hover {
+  color: #111;
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #FFF;
+  transition: color, background-color 600ms;
+  -webkit-transition: color, background-color 600ms;
+}
+
+// SHOW PAGE
+
+.room-show {
+  background-image: image-url("leave.png");
+}
+.chat-wrapper {
+  padding: 40px 20px 20px 20px;
+}
+.chat-position {
+  margin: auto;
+  float: none;
+}
+.room-messages {
+  background-image: image-url("lamp.png");
+  padding: 20px;
+  border-style: solid;
+  border-width: thin;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: scroll;
+}

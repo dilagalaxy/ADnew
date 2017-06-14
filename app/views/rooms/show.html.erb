@@ -1,15 +1,23 @@
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @room.user %>
-</p>
-
-<p>
-  <strong>Room name:</strong>
-  <%= @room.room_name %>
-</p>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<!-- <div class="alert alert-info" style="display:none" role="alert">A new message was posted!</div> -->
+<body class="room-show">
+  <header>
+    <h1><%= @room.room_name %> Chat Room</h1>
+  </header>
+  <div class="chat-wrapper">
+    <div class="col-xs-12 col-sm-10 col-md-10 chat-position">
+      <div class="row">
+        <div class="messages room-messages" role="region">
+          <%= render partial: "messages", locals: {message: @message} %>
+        </div>
+      </div>
+      <div class="row">
+        <% if signed_in? %>
+          <div class="messages">
+            <%= render partial: "new_message", locals: {message: @message} %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-6 col-md-3">
+  <div class="display-room">
+  <% cache room do %>
+    <div class="room-description">
+      <p class="room-name"><%= room.room_name %></p>
+    </div>
+    <div class="room-links">
+      <span><%= link_to 'Show', room %></span>
+      <% if current_user && current_user.admin? %>
+        <span><%= link_to 'Edit', edit_room_path(room) %></span>
+        <span><%= link_to 'Delete', room, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div> <!-- /col -->

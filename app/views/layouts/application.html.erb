@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,31 +13,43 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-left">
-      <%= link_to 'AD', root_path, class: 'navbar-brand' %>
-      <ul class="nav navbar-nav">
-      <% if user_signed_in? %>
-      <div class="btn-group">
-        <button type="button" class="btn btn-user dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <%= link_to(current_user.user_name, users_path) %> <span class="caret"></span>
-        </button>
-         <ul class="dropdown-menu" role="menu">
-          <li><%= link_to('Profile', users_path) %></li>
-          <li><%= link_to('Change Password', edit_user_registration_path) %></li>
-          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-          <li class="divider"></li>
-          <li><a href="#">Create new room</a></li>
-         </ul>
-       </div>
-       </li>
-       <li><a href="#">My Rooms</a></li>
-       <li><a href="#">Direct Messages</a></li>
-      <% else %>
-       <li><%= link_to('Login/Sign up', new_user_session_path) %></li>
-       <li><a href="#">Active Rooms</a></li>
-      <% end %>
-      </ul>
-    </div>
+    <nav class="navbar navbar-default navbar-style">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'AD', root_path, class: 'navbar-brand' %>
+        </div><!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right link-style">
+            <% if user_signed_in? %>
+            <div class="btn-group">
+              <button type="button" class="btn btn-user dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <%= link_to(current_user.user_name, users_path) %> <span class="caret"></span>
+              </button>
+               <ul class="dropdown-menu" role="menu">
+                <li><%= link_to('Profile', users_path) %></li>
+                <li><%= link_to('Change Passowrd', edit_user_registration_path) %></li>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Create new Room', new_room_path %></li>
+               </ul>
+             </div>
+             <li><%= link_to 'Chat Rooms', rooms_path %></li>
+            <% else %>
+             <li><%= link_to('Login/Sign up', new_user_session_path) %></li>
+             <li><%= link_to 'Chat Rooms', rooms_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
    <div class="page-wrap">
      <div class="container-fluid">

@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :user_id %>
     <%= f.text_field :user_id %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= f.label :room_name %>
-    <%= f.text_field :room_name %>
+    <%= f.text_field :room_name, class: 'form-text-field' %>
   </div>
 
-  <div class="actions">
+  <div class="actions form-button">
     <%= f.submit %>
   </div>
 <% end %>

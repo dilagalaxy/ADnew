@@ -1,10 +1,8 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
   end
 
   # GET /messages/1
@@ -25,10 +23,13 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
+    @room = Room.find(params[:room_id])
+    @message = @room.messages.new(message_params)
+    @message.user = current_user
+    @user = current_user
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @room }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
@@ -54,11 +55,10 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
+    @message = Message.find(params[:id])
+    room = @message.room
     @message.destroy
-    respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to room
   end
 
   private
